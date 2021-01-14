@@ -4,9 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+.firebase.js
 
 # testing
 /coverage
+/util
 
 # next.js
 /.next/

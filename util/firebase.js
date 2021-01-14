@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCCaAQ15pY4aJqmy5FhPfZRah4XKbA7ppE',
+  apiKey: 'AIzaSyBcGBdedKc1m5LmxT-B8v0W82BRjvyzU1E',
   authDomain: 'wellnessblog-b81d5.firebaseapp.com',
   projectId: 'wellnessblog-b81d5',
   storageBucket: 'wellnessblog-b81d5.appspot.com',

@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
+import Apiposts from '../components/apiposts'
 import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
@@ -42,6 +43,10 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      </section>
+      <section>
+      <h2 className={utilStyles.headingLg}>Blog Posts</h2>
+      <Apiposts/>
       </section>
     </Layout>
   )

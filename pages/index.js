@@ -1,21 +1,27 @@
-import Head from 'next/head'
-import Layout, { siteTitle } from '../components/layout'
-import Apiposts from '../components/apiposts'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
-import Link from 'next/link'
-import Date from '../components/date'
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/layout';
+import Apiposts from '../components/apiposts';
+import utilStyles from '../styles/utils.module.css';
+import { getSortedPostsData } from '../lib/posts';
+import Link from 'next/link';
+import Date from '../components/date';
+import firebase from '../util/firebase';
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
-      allPostsData
-    }
-  }
+      allPostsData,
+    },
+  };
 }
 
 export default function Home({ allPostsData }) {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+    // const sayHello = firebase.functions().httpsCallable('sayHello');
+  }
   return (
     <Layout home>
       <Head>
@@ -27,6 +33,15 @@ export default function Home({ allPostsData }) {
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
+        <div align="center">
+          <a
+            className={utilStyles.example_d}
+            rel="nofollow noopener"
+            onClick={handleClick}
+          >
+            Say hello
+          </a>
+        </div>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -45,9 +60,9 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
       <section>
-      <h2 className={utilStyles.headingLg}>Blog Posts</h2>
-      <Apiposts/>
+        <h2 className={utilStyles.headingLg}>Blog Posts</h2>
+        <Apiposts />
       </section>
     </Layout>
-  )
+  );
 }

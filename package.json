@@ -9,9 +9,11 @@
     "export": "next export"
   },
   "dependencies": {
+    "@firebase/firestore": "^2.1.2",
     "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
+    "firebase": "^8.2.2",
     "gray-matter": "^4.0.2",
     "next": "^10.0.0",
     "react": "16.13.1",
